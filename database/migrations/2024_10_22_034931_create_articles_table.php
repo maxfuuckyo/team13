@@ -18,7 +18,7 @@ class CreateArticlesTable extends Migration
             $table->string('business_name', 100)->comment('商業名稱');
             $table->string('business_address', 200)->comment('商業地址');
             $table->decimal('paid_in_capital', 15, 2)->comment('實收資本額');
-            $table->integer('establishment_date')->comment('核准設立日期'); // 若需用日期型別可改為 $table->date('establishment_date')->comment('核准設立日期');
+            $table->date('establishment_date')->comment('核准設立日期');
             $table->string('imported_business_address', 200)->comment('營業地址（財政資訊中心匯入）');
             $table->string('industry_code_imported', 255)->nullable()->comment('行業代號（財政資訊中心匯入）');
             $table->date('imported_date')->comment('財政資訊中心匯入日期');
