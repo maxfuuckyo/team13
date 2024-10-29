@@ -117,7 +117,7 @@ class ArticlesTableSeeder extends Seeder
             ],
         ];
 
-        DB::table('articles')->insert($articles);
+        DB::table('Articles')->insert($articles);
     }
 
 }
