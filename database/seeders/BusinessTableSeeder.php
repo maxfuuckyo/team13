@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class MarineMammalsObservationsTableSeeder extends Seeder
+class BusinessTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -117,7 +117,7 @@ class MarineMammalsObservationsTableSeeder extends Seeder
             ],
         ];
 
-        DB::table('articles')->insert($articles);
+        DB::table('business')->insert($articles);
     }
 
 }
