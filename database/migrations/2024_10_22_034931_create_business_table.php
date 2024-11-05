@@ -13,7 +13,7 @@ class CreateBusinessTable extends Migration
      */
     public function up()
     {
-        Schema::create('articles', function (Blueprint $table) {
+        Schema::create('business', function (Blueprint $table) {
             $table->string('unified_number', 10)->primary()->comment('統一編號');
             $table->string('business_name', 100)->comment('商業名稱');
             $table->string('business_address', 200)->comment('商業地址');
@@ -33,6 +33,6 @@ class CreateBusinessTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('articles');
+        Schema::dropIfExists('business');
     }
 }
