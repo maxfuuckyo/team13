@@ -13,21 +13,22 @@ class BusinessTableSeeder extends Seeder
      *
      * @return void
      */
-    public function generateRandomString($length = 10) {
+    public function generaterandomstring($length = 10) {
         $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
         $randomString = '';
+
         for ($i = 0; $i < $length; $i++) {
-            $randomString .= $characters[rand(0, $charactersLength - 1)];
+          $randomString .= $characters[rand(0, $charactersLength - 1)];
         }
         return $randomString;
     }
 
     public function generateRandomName() {
-        $first_name = $this->generateRandomString(rand(2, 15));
+        $first_name = $this->generaterandomstring(rand(2, 15));
         $first_name = strtolower($first_name);
         $first_name = ucfirst($first_name);
-        $last_name = $this->generateRandomString(rand(2, 15));
+        $last_name = $this->generaterandomstring(rand(2, 15));
         $last_name = strtolower($last_name);
         $last_name = ucfirst($last_name);
         $name = $first_name . " ". $last_name;
@@ -84,9 +85,10 @@ class BusinessTableSeeder extends Seeder
                 'business_name' => $name,
                 'imported_date' => $imported_date,
                 'establishment_date' => $establishment_date,
-                'areas' => $areas,
-                'industry_code' => $industry_code,
-                'capital' => $capital,
+                'business_address' => $areas,
+                'imported_business_address' => $areas,
+                'industry_code_imported' => $industry_code,
+                'paid_in_capital' => $capital,
                 'created_at' => Carbon::now()->subMinutes(rand(1, 55)),
                 'updated_at' => Carbon::now()->subMinutes(rand(1, 55))
             ];
