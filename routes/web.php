@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\BusinessController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +20,5 @@ Route::get('/', function () {
 Route::get('/sdgs', function () {
     return view('intro_sdgs');
 });
+
+Route::get('/business',[BusinessController::class,'Index']);
