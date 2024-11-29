@@ -7,7 +7,8 @@
 
     <div class="ml-4 text-lg leading-7 font-semibold">
         <a href="{{ route('business.index') }}" class="ml-1 underline">
-            工作內容
+            <h1>聯合國可持續發展目標 (SDGs)</h1>
+            <p>為了實現更美好的未來，全球共有17項可持續發展目標。</p>
         </a>
     </div>
 </div>

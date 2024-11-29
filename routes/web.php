@@ -21,4 +21,8 @@ Route::get('/sdgs', function () {
     return view('intro_sdgs');
 });
 
-Route::get('/business',[BusinessController::class,'Index']);
+Route::get('/businesses', [BusinessController::class, 'index'])->name('businesses.index');
+
+Route::get('businesses/{id}', [BusinessController::class, 'show'])->where('id', '[0-9]+')->name('businesses.show');
+Route::get('businesses/{id}/edit', [BusinessController::class, 'edit'])->where('id', '[0-9]+')->name('businesses.edit');
+Route::delete('businesses/delete/{id}', [BusinessController::class, 'destroy'])->where('id', '[0-9]+')->name('businesses.destroy');
