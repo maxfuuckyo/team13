@@ -6,9 +6,8 @@
     </svg>
 
     <div class="ml-4 text-lg leading-7 font-semibold">
-        <a href="{{ route('business.index') }}" class="ml-1 underline">
-            <h1>聯合國可持續發展目標 (SDGs)</h1>
-            <p>為了實現更美好的未來，全球共有17項可持續發展目標。</p>
+        <a href="{{ route('businesses.index') }}" class="ml-1 underline">
+            地方縣市登記資料-I專業、科學及技術服務業
         </a>
     </div>
 </div>

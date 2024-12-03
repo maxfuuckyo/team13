@@ -49,8 +49,8 @@ class BusinessController extends Controller
      */
     public function show($id)
     {
-        $Business = Business::findOrFail($id);
-        return view('Businesses.show')->with('Business', $Business);
+        $Businesses = Business::findOrFail($id);
+        return view('Business.show')->with('Business', $Businesses);
     }
 
     /**
@@ -86,6 +86,6 @@ class BusinessController extends Controller
     {
         $Business = Business::findOrFail($id);
         $Business->delete();
-        return redirect('Businesses'); // 觸發一組路由 observations
+        return redirect('Business'); 
     }
 }

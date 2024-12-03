@@ -3,6 +3,8 @@
 @section('title', '地方縣市登記資料-I專業、科學及技術服務業')
 
 @section('sdg_theme', '地方縣市登記資料-I專業、科學及技術服務業')
+
+@section('sdg_contents')
 <table border="1">
     <tr>
         <td>統一編號</td>

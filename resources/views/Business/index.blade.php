@@ -26,10 +26,10 @@
                 <td>{{$Business->imported_business_address}}</td>
                 <td>{{$Business->industry_code_imported}}</td>
                 <td>{{$Business->imported_date}}</td>
-                <td><a href="{{ route('businesses.show', ['id' => $business->id]) }}">顯示</a></td>
-                <td><a href="{{ route('businesses.edit', ['id' => $business->id]) }}">編輯</a></td>
+                <td><a href="{{ route('businesses.show', ['id' => $Business->unified_number]) }}">顯示</a></td>
+                <td><a href="{{ route('businesses.edit', ['id' => $Business->unified_number]) }}">編輯</a></td>
                 <td>
-                    <form action="{{ url('/businesses/delete', ['id' => $business->id]) }}" method="post">
+                    <form action="{{ url('/businesses/delete', ['id' => $Business->unified_number]) }}" method="post">
                         <input class="btn btn-default" type="submit" value="刪除" />
                         @method('delete')
                         @csrf
