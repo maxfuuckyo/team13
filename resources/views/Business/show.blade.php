@@ -11,11 +11,11 @@
         <td>{{ $Business->unified_number }}</td>
     </tr>
     <tr>
-        <td>公司名稱</td>
+        <td>商業名稱</td>
         <td>{{ $Business->business_name }}</td>
     </tr>
     <tr>
-        <td>公司地址</td>
+        <td>商業地址</td>
         <td>{{ $Business->business_address }}</td>
     </tr>
     <tr>
@@ -27,7 +27,7 @@
         <td>{{ $Business->establishment_date }}</td>
     </tr>
     <tr>
-        <td>進口公司地址</td>
+        <td>營業地址</td>
         <td>{{ $Business->imported_business_address }}</td>
     </tr>
     <tr>
@@ -35,7 +35,7 @@
         <td>{{ $Business->industry_code_imported }}</td>
     </tr>
     <tr>
-        <td>進口日期</td>
+        <td>匯入日期</td>
         <td>{{ $Business->imported_date }}</td>
     </tr>
 </table>

@@ -14,7 +14,8 @@ class CreateBusinessTable extends Migration
     public function up()
     {
         Schema::create('business', function (Blueprint $table) {
-            $table->string('unified_number', 10)->primary()->comment('統一編號');
+            $table->id();
+            $table->string('unified_number', 10)->comment('統一編號');
             $table->string('business_name', 100)->comment('商業名稱');
             $table->string('business_address', 200)->comment('商業地址');
             $table->decimal('paid_in_capital', 15, 2)->comment('實收資本額');

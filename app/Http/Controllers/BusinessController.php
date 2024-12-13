@@ -27,7 +27,7 @@ class BusinessController extends Controller
      */
     public function create()
     {
-        //
+        return view("business.create");
     }
 
     /**
@@ -38,7 +38,20 @@ class BusinessController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->only([
+            'unified_number',
+            'business_name',
+            'business_address',
+            'paid_in_capital',
+            'establishment_date',
+            'imported_business_address',
+            'industry_code_imported',
+            'imported_date',
+        ]);
+
+        $business = Business::create($data);
+        
+        return redirect('businesses');
     }
 
     /**
@@ -49,8 +62,8 @@ class BusinessController extends Controller
      */
     public function show($id)
     {
-        $Businesses = Business::findOrFail($id);
-        return view('Business.show')->with('Business', $Businesses);
+        $Business = Business::findOrFail($id);
+        return view('Business.show')->with('Business', $Business);
     }
 
     /**
@@ -84,8 +97,8 @@ class BusinessController extends Controller
      */
     public function destroy($id)
     {
-        $Business = Business::findOrFail($id);
-        $Business->delete();
-        return redirect('Business'); 
+        $business = Business::findOrFail($id);
+        $business->delete();
+        return redirect('businesses'); 
     }
 }

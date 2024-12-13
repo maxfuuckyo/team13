@@ -6,7 +6,7 @@
     </svg>
 
     <div class="ml-4 text-lg leading-7 font-semibold">
-        <a href="{{ route('businesses.index') }}" class="ml-1 underline">
+        <a href="{{ route('business.index') }}" class="ml-1 underline">
             地方縣市登記資料-I專業、科學及技術服務業
         </a>
     </div>
