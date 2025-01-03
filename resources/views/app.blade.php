@@ -356,13 +356,13 @@
         @media (prefers-color-scheme: dark) {
             .dark\:bg-gray-800 {
                 --bg-opacity: 1;
-                background-color: #2d3748;
+                background-color: #3a537e;
                 background-color: rgba(45, 55, 72, var(--bg-opacity))
             }
 
             .dark\:bg-gray-900 {
                 --bg-opacity: 1;
-                background-color: #1a202c;
+                background-color: #2e446e;
                 background-color: rgba(26, 32, 44, var(--bg-opacity))
             }
 

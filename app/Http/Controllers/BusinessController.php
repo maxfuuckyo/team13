@@ -51,7 +51,7 @@ class BusinessController extends Controller
 
         $business = Business::create($data);
         
-        return redirect('businesses');
+        return redirect('business');
     }
 
     /**
@@ -74,7 +74,8 @@ class BusinessController extends Controller
      */
     public function edit($id)
     {
-        //
+        $Business = Business::findOrFail($id);
+        return view('Business.edit')->with('Business', $Business);
     }
 
     /**
@@ -86,7 +87,26 @@ class BusinessController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $Business = Business::findOrFail($id);
+
+        $data = $request->only([
+            'unified_number',
+            'business_name',
+            'business_address',
+            'paid_in_capital',
+            'establishment_date',
+            'imported_business_address',
+            'industry_code_imported',
+            'imported_date',
+        ]);
+
+
+        $Business->fill($data);
+
+        $Business->save();
+
+        return redirect('Business');
+
     }
 
     /**

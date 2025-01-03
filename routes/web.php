@@ -35,3 +35,8 @@ Route::get('businesses/{id}', [BusinessController::class, 'show'])->where('id', 
 Route::get('businesses/{id}/edit', [BusinessController::class, 'edit'])->where('id', '[0-9]+')->name('business.edit');
 # 刪除特定一筆資料
 Route::delete('businesses/delete/{id}', [BusinessController::class, 'destroy'])->where('id', '[0-9]+')->name('business.destroy');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::patch('businesses/{id}/update', [BusinessController::class, 'update'])->where('id', '[0-9]+')->name('business.update');
