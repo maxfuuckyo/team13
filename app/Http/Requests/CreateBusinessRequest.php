@@ -26,104 +26,49 @@ class CreateBusinessRequest extends FormRequest
         return [
             'unified_number'=> 'required|numeric|min:1000000000|max:100000000000',
             'business_name'=> 'required|string|min:4',
-            'business_address'=> 'required|string|min:9',
+            'business_address'=> 'required|string',
             'paid_in_capital'=> 'required|numeric',
-            'establishment_date'=> 
-            'imported_business_address'=>
-            'industry_code_imported'=>
-            'imported_date'=>,
+            'establishment_date'=> 'required|numeric',
+            'imported_business_address'=> 'required|string',
+            'industry_code_imported'=> 'required|numeric|min:000000001|max:10000000000',
+            'imported_date'=>'required|numeric',
         ];
     }
 
-    public function messages(){
+    public function messages()
+    {
         return [
-            'project_name.required' => '計畫名稱是必填項。',
-            'project_name.min' => '計畫名稱至少需要 5 個字元。',
+            'unified_number.required'=> '統一編號是必填項。',
+            'unified_number.numeric'=> '編號至少需要 10 個數字。',
+
+            'business_name.required' => '商業名稱是必填項。',
+            'business_name.min' => '名稱至少需要 4 個字元。',
             
-            'year.required' => '年份是必填項。',
-            'year.numeric' => '年份必須是數字。',
-            'year.min' => '年份必須大於或等於 1980。',
+            'business_address.required' => '商業地址是必填項。',
+            'business_address.min' => '地址必須是準確地址。',
 
-            'month.required' => '月份是必填項。',
-            'month.numeric' => '月份必須是數字。',
-            'month.min' => '月份不能小於 1。',
-            'month.max' => '月份不能大於 12。',
+            'paid_in_capital.required' => '實收資本額是必填項。',
+            'paid_in_capital.numeric' => '資本額必須是數字。',
 
-            'day.required' => '日期是必填項。',
-            'day.numeric' => '日期必須是數字。',
-            'day.min' => '日期不能小於 1。',
-            'day.max' => '日期不能大於 31。',
+            'establishment_date.required' => '設立日期是必填項。',
+            'establishment_date.numeric' => '日期必須是數字。',
+            'establishment_date.min' => '月不能小於 1。',
+            'establishment_date.max' => '月不能大於 12。',
+            'establishment_date.min' => '日期不能小於 1。',
+            'establishment_date.max' => '日期不能大於 31。',
 
-            'survey_method.required' => '調查方法是必填項。',
-            'survey_method.min' => '調查方法至少需要 2 個字元。',
+            'imported_business_address.required' => '營業地址是必填項。',
+            'imported_business_address.min' => '營業地址必須是準確地址。',
 
-            'longitude.required' => '經度是必填項。',
-            'longitude.numeric' => '經度必須是數字。',
+            'industry_code_imported.required' => '行業代碼是必填項。',
+            'industry_code_imported.numeric' => '代碼必須是數字。',
 
-            'latitude.required' => '緯度是必填項。',
-            'latitude.numeric' => '緯度必須是數字。',
-
-            'administrative_region.required' => '行政區域是必填項。',
-            'administrative_region.min' => '行政區域至少需要 2 個字元。',
-
-            'identification_level.required' => '鑑定級別是必填項。',
-            'identification_level.min' => '鑑定級別至少需要 1 個字元。',
-
-            'common_species_name.required' => '常見物種名稱是必填項。',
-            'common_species_name.min' => '常見物種名稱至少需要 2 個字元。',
-
-            'original_species_name.string' => '原始物種名稱必須是字串。',
-            'original_species_name.required' => '原始物種名稱是必填項。',
-            'original_species_name.min' => '原始物種名稱至少需要 2 個字元。',
-
-            'original_species_scientific_name.string' => '原始物種學名必須是字串。',
-            'original_species_scientific_name.min' => '原始物種學名至少需要 2 個字元。',
-
-            'verified_species_code.string' => '校定物種必須是字串。',
-            'verified_species_code.min' => '校定物種代碼至少需要 2 個字元。',
-
-            'quantity.string' => '數量或範圍必須是字串。',
-            'quantity.min' => '數量至少需要 1 個字元。',
-
-            'quantity_uint.string' => '數量或範圍必須是字串。',
-            'quantity_uint.min' => '數量單位至少需要 1 個字元。',
-
-            'kingdom.string' => '門必須是字串。',
-            'kingdom.required' => '界是必填項。',
-            'kingdom.min' => '界至少需要 2 個字元。',
-
-            'kingdom_chinese_name.string' => '界中文必須是字串。',
-            'kingdom_chinese_name.min' => '界中文名稱至少需要 2 個字元。',
-
-            'phylum.string' => '門必須是字串。',
-            'phylum.min' => '門至少需要 2 個字元。',
-            
-            'phylum_chinese_name.string' => '門必須是字串。',
-            'phylum_chinese_name.min' => '門中文名稱至少需要 2 個字元。',
-
-            'class.string' => '綱必須是字串。',
-            'class.min' => '綱至少需要 2 個字元。',
-
-            'class_chinese_name.string' => '綱中文必須是字串。',
-            'class_chinese_name.min' => '綱中文名稱至少需要 2 個字元。',
-
-            'order.string' => '目必須是字串。',
-            'order.min' => '目至少需要 2 個字元。',
-
-            'order_chinese_name.string' => '目中文必須是字串。',
-            'order_chinese_name.min' => '目中文名稱至少需要 2 個字元。',
-
-            'family.string' => '科必須是字串。',
-            'family.min' => '科至少需要 2 個字元。',
-
-            'family_chinese_name.string' => '科中文名稱必須是字串。。',
-            'family_chinese_name.min' => '科中文名稱至少需要 2 個字元。',
-
-            'genus.string' => '屬必須是字串。',
-            'genus.min' => '屬至少需要 2 個字元。',
-
-            'genus_chinese_name.string' => '屬中文名稱必須是字串。',
-            'genus_chinese_name.min' => '屬中文名稱至少需要 2 個字元。',
+            'imported_date.required' => '匯入日期是必填項。',
+            'imported_date.numeric' => '日期必須是數字。',
+            'establishment_date.min' => '月不能小於 1。',
+            'establishment_date.max' => '月不能大於 12。',
+            'establishment_date.min' => '日期不能小於 1。',
+            'establishment_date.max' => '日期不能大於 31。',
         ];
     }
 }

@@ -9,6 +9,7 @@
 
 編輯特定一筆地方縣市登記表單
 
+@include('message.list')
 {!! Form::model($Business, ['method'=>'PATCH', 'action'=>['\App\Http\Controllers\BusinessController@update', $Business->id]]) !!}
     @include('Business.form', ['submitButtonText'=>"修改縣市登記資料"])
 {!! Form::close() !!}

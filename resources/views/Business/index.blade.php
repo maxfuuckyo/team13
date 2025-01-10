@@ -5,7 +5,7 @@
 @section('sdg_theme', '地方縣市登記資料-I專業、科學及技術服務業')
 
 @section('sdg_contents')
-<a href={{ route('business.create') }}> 新增地方縣市登記資料 </a>
+    <a href={{ route('business.create') }}> 新增地方縣市登記資料 </a>
     <table border="1">
         <tr>
             <th>統一編號</th>

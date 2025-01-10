@@ -9,6 +9,7 @@
 
 新增地方縣市登記表單
 
+@include('message.list')
 {!! Form::open(['url' => 'Business/store']) !!}
     @include('business.form', ['submitButtonText'=>"新增縣市登記資料"])
 {!! Form::close() !!}

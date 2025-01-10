@@ -7,7 +7,7 @@
     {!! Form::text('business_name', null, ['class' => 'form-control']) !!}
 </div>
 <div class="form-group">
-    {!! Form::label('business_address', '商業地址') !!}
+    {!! Form::label('business_address', '商業地址:') !!}
     {!! Form::text('business_address', null, ['class' => 'form-control']) !!}
 </div>
 <div class="form-group">
